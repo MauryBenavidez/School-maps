@@ -4,7 +4,7 @@ void main() {
   var app = MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text("School Maps"),
+        title: Text("School_Maps"),
       ),
     ),
   );
