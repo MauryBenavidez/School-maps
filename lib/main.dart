@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/Inicio.dart';
-import 'Inicio.dart';
+import 'package:schools_maps/main.dart';
 void main() {
   var app = MaterialApp(
     home: Scaffold(
@@ -26,7 +26,7 @@ void main() {
     return MaterialApp(
       home: Inicio(),
     );
-  }
+  } 
 }
 class MyTextField extends StatefulWidget {
     MyTextField({Key key}) : super(key: key);
