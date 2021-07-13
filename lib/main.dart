@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:schools_maps/Inicio.dart';
+import 'Inicio.dart';
 void main() {
   var app = MaterialApp(
     home: Scaffold(
@@ -17,13 +18,15 @@ void main() {
             ],),
         ),
     ),
-  );
-  
-  
-
-  runApp(app);
-
-  
+  );  runApp(app);
+}
+  class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Inicio(),
+    );
+  }
 }
 class MyTextField extends StatefulWidget {
     MyTextField({Key key}) : super(key: key);
