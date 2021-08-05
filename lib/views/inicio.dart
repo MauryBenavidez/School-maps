@@ -9,7 +9,7 @@ void main() {
           children: <Widget>[
             
             TextField(
-              decoration: InputDecoration(hintText: "Busdddca aquí"),
+              decoration: InputDecoration(hintText: "Busca aquí"),
               onSubmitted: (String value) {
                 print(value);
               },
@@ -24,7 +24,7 @@ void main() {
   
 }
 
-class Myapp extends StatelessWidget {
+class MyHome extends StatelessWidget {
   @override
 Widget build(context){
     return MaterialApp(

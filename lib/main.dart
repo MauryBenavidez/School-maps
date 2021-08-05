@@ -27,16 +27,27 @@ void main() {
 
 
 
-class MyApp extends StatelessWidget {
+class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'inicio',
       routes: {
-'inicio': (_) => MyApp(),
+'inicio': (_) => MyHome(),
 },
     );
+  }
+}
+
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return     MyHome();
   }
 }
 
