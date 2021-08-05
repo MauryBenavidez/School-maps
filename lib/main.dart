@@ -2,46 +2,30 @@ import 'package:flutter/material.dart';
 import 'views/inicio.dart';
 
 void main() {
-  var app = MaterialApp(
-    home: Scaffold(
-      
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            
-            TextField(
-              decoration: InputDecoration(hintText: "Busca aquí"),
-              onSubmitted: (String value) {
-                print(value);
-              },
-              
-            )
-          ],
-        ),
-      ),
-    ),
-  );
-  runApp(app);
-  
+  runApp(MyApp());
 }
 
 
 
-class MyHome extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'inicio',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: Inicio.id,
       routes: {
-'inicio': (_) => MyHome(),
-},
+        Inicio.id: (_) => Inicio(),
+      },
     );
   }
 }
 
-class NewWidget extends StatelessWidget {
-  const NewWidget({
+class MyHome extends StatelessWidget {
+  const MyHome({
     Key key,
   }) : super(key: key);
 
