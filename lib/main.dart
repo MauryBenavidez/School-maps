@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 void main() {
   var app = MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: Text("School_Maps"),
-      ),
+      
       body: Container(
         child: Column(
           children: <Widget>[
+            
             TextField(
               decoration: InputDecoration(hintText: "Busca aquí"),
               onSubmitted: (String value) {
                 print(value);
               },
+              
             )
           ],
         ),
@@ -21,12 +21,18 @@ void main() {
     ),
   );
   runApp(app);
+  Container(child: ConstrainedBox(
+    constraints: BoxConstraints.expand(),
+    // ignore: deprecated_member_use
+    child: FlatButton(onPressed: null,
+        child: Image.asset('path/the_image.png'))));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp();
+    
   }
 }
 
@@ -41,4 +47,6 @@ class _MyTextFieldState extends State<MyTextField> {
   Widget build(BuildContext context) {
     return Scaffold();
   }
+  
 }
+
