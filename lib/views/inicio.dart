@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'views/inicio.dart';
 
 void main() {
   var app = MaterialApp(
@@ -10,7 +9,7 @@ void main() {
           children: <Widget>[
             
             TextField(
-              decoration: InputDecoration(hintText: "Busca aquí"),
+              decoration: InputDecoration(hintText: "Busdddca aquí"),
               onSubmitted: (String value) {
                 print(value);
               },
@@ -25,18 +24,24 @@ void main() {
   
 }
 
+class Myapp extends StatelessWidget {
+  @override
+Widget build(context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Center(
+        
 
+      )
+      );
+}
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'inicio',
-      routes: {
-'inicio': (_) => MyApp(),
-},
-    );
+    return MaterialApp();
+    
   }
 }
 
@@ -53,4 +58,3 @@ class _MyTextFieldState extends State<MyTextField> {
   }
   
 }
-
