@@ -53,6 +53,10 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 25.0,
             ),
+            _textFielName(),
+            SizedBox(
+              height: 15.0,
+            ),
             _textFielCorreo(),
             SizedBox(
               height: 15.0,
@@ -63,7 +67,7 @@ class LoginPage extends StatelessWidget {
             ),
             _buttonLostPassword(),
             SizedBox(
-              height: 65.0,
+              height: 25.0,
             ),
             _buttonSignUp(),
           ],
@@ -72,12 +76,23 @@ class LoginPage extends StatelessWidget {
     );
   }
 
+  Widget _textFielName() {
+    return _textFieldGeneral(
+      labelText: "Nombre",
+      hintText: "Mauricio Benavidez",
+      icon: Icons.person_outline,
+      onChanged: (value) {},
+      obscureText: false,
+    );
+  }
+
   Widget _textFielCorreo() {
     return _textFieldGeneral(
       labelText: "Correo",
       hintText: "ejemplo@gmail.com",
-      icon: Icons.person_outline,
+      keyboardType: TextInputType.emailAddress,
       onChanged: (value) {},
+      icon: Icons.email_outlined,
       obscureText: false,
     );
   }
@@ -133,12 +148,14 @@ class _textFieldGeneral extends StatelessWidget {
   final Function onChanged;
   final IconData icon;
   final bool obscureText;
+  final TextInputType keyboardType;
   const _textFieldGeneral({
     this.labelText,
     this.hintText,
     this.onChanged,
     this.icon,
     this.obscureText,
+    this.keyboardType,
   });
 
   @override
