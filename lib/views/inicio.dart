@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 
@@ -27,6 +29,7 @@ class Inicio extends StatelessWidget {
            child: _appBar(),
            ),
            _body(),
+           
        ],
     );
   }
@@ -72,15 +75,49 @@ class Inicio extends StatelessWidget {
       ],
     );
   }
+
+  
   
 }
+
 
 Widget _body() {
   final double _borderValue =35.0;
   return Expanded(
-    child: ListView(),
+    child: ListView(
+      padding: EdgeInsets.only(top: 40.0),
+      shrinkWrap: true,
+      children: [
+        Container(
+          height: 60.0,
+          decoration: BoxDecoration(
+            color: Colors.cyan,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(_borderValue),
+            topRight: Radius.circular(_borderValue),
+          ) 
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+
+            children: [
+              Padding(padding: EdgeInsets.only(
+                top: 40.0,
+                left: 40.0,
+                right: 30.0,
+              ) 
+
+              ),
+
+            ],
+          ),
+        )
+      ],
+    ),
     );
 }
+
+
 
 
 

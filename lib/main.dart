@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+
 import 'views/inicio.dart';
 
 void main() {
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Inicio.id,
       routes: {
         Inicio.id: (_) => Inicio(),
+        
       },
     );
   }
