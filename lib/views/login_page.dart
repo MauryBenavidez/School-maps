@@ -33,14 +33,21 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  '',
+                  'Inicia sesión',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(''),
+                Text(
+                  'Regístrate',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -68,7 +75,7 @@ class LoginPage extends StatelessWidget {
   Widget _textFielCorreo() {
     return _textFieldGeneral(
       labelText: "Correo",
-      hintText: "Ejemplo@gmail.com",
+      hintText: "ejemplo@gmail.com",
       icon: Icons.person_outline,
       onChanged: (value) {},
       obscureText: false,
@@ -102,7 +109,7 @@ class LoginPage extends StatelessWidget {
   Widget _buttonSignUp() {
     // ignore: deprecated_member_use
     return RaisedButton(
-      color: Colors.blueGrey,
+      color: Colors.white,
       padding: EdgeInsets.symmetric(
         horizontal: 75.0,
         vertical: 10.0,
@@ -112,7 +119,7 @@ class LoginPage extends StatelessWidget {
       ),
       child: Text('Iniciar sesion',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.blueGrey,
             fontSize: 25.0,
           )),
       onPressed: () {},
