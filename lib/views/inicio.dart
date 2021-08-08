@@ -1,19 +1,19 @@
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:schools_maps/views/widget/barra.dart';
 
 class Inicio extends StatelessWidget {
 
   static String id = 'inicio';
   @override
+  
   Widget build(BuildContext context) {
     
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan,
-        titleSpacing:15,
+        titleSpacing:30,
+        
         title: Text('School Maps'),
         
         
@@ -21,23 +21,23 @@ class Inicio extends StatelessWidget {
       ),
       
       body: Container(
-        decoration: new BoxDecoration(
-                         border: Border.all (color: Colors.grey, width: 1.0), // Una capa de borde gris
-            color: Colors.white,
-            borderRadius: BorderRadius.all( Radius.circular(10.0)),
-          ),
+        
+        
+          
+          
         
         child: Column(
-          
+         
           children: <Widget>[
-            TextField(
-              decoration: InputDecoration(hintText: "Busca aquí"),
-             
-                
-              
-              
-            ),
-            
+           
+           Padding(
+             padding: EdgeInsets.only(
+             top: 40.0,
+             left: 30.0,
+             right: 30.0,
+           ), 
+           child: Barra(),
+           )
           ],
           
         ),
@@ -48,29 +48,11 @@ class Inicio extends StatelessWidget {
     );
   }
 
-  Widget app(BuildContext context){
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '$Counter',
-              style: Theme.of(context).textTheme.bodyText1,
-            )
+  
 
-          ],
-        ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        
-        child: Icon(Icons.account_circle),
-      ),
+   
 
-    );
-      
-    
-  }
+  
 
   
 
