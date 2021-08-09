@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/views/widgets/barra.dart';
+import 'package:schools_maps/views/widgets/botones.dart';
 
 class Inicio extends StatelessWidget {
 
@@ -102,14 +103,13 @@ class Inicio extends StatelessWidget {
                   top: 40.0,
                   left:30.0,
                   right: 30.0,
-
                 ),
                 child: Barra(),
-                )
-
+                ),
+                
+                Botones(),
               ],
             ),
-
           )
         ],
 
@@ -118,6 +118,8 @@ class Inicio extends StatelessWidget {
 
     
   }
+
+  
 }
 
   
