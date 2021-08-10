@@ -1,21 +1,16 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:schools_maps/views/widgets/barra.dart';
 import 'package:schools_maps/views/widgets/botones.dart';
 
-class Inicio extends StatelessWidget {
 
+class Inicio extends StatelessWidget {
   static String id = 'inicio';
   @override
-  
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
-      
-      
       body: Container(
-        
-        
      child: _bodyPage(context),
         ),  
     );
@@ -50,17 +45,14 @@ class Inicio extends StatelessWidget {
       children: [
          Icon(
            Icons.account_circle
-           
            ),
         Column(
           mainAxisSize: MainAxisSize.max,
-          
           children: [
             Text('Schools',style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 25.0,
-              
             ),),
             Row(
               children: [
@@ -69,31 +61,26 @@ class Inicio extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 25.0,
                 ),),
-                
               ],
             )
           ],
         )
-       
       ],
     );
   }
 
   Widget _body() {
-    final double _bordervalue =35.0;
-
     return Expanded(
       child: ListView(
         padding: EdgeInsets.only(top: 40.0),
         shrinkWrap: true,
         children: [
           Container(
-            height: 750.0,
+            height: 845,
             decoration: BoxDecoration(
               color: Colors.cyan,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(_bordervalue),
-                topRight: Radius.circular(_bordervalue),
+               
               )
             ),
             child: Column(
@@ -106,20 +93,17 @@ class Inicio extends StatelessWidget {
                 ),
                 child: Barra(),
                 ),
-                
                 Botones(),
               ],
             ),
+          
           )
         ],
-
       ),
     );
-
-    
   }
 
-  
+ 
 }
 
   
