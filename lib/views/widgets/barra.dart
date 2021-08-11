@@ -16,7 +16,8 @@ class Barra extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.blue,
         
-        borderRadius:  BorderRadius.circular(18.0),//contorno de la barra de busqueda
+        
+        borderRadius:  BorderRadius.circular(20.0),//contorno de la barra de busqueda
       ),
       child: TextField(
         cursorColor: Colors.white,
