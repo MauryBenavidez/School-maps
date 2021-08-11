@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schools_maps/views/info_school.dart';
 import 'views/login_page.dart';
 
 void main() {
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: LoginPage.id,
+      initialRoute: InfoSchool.id,
       routes: {
-        LoginPage.id: (_) => LoginPage(),
+        InfoSchool.id: (_) => InfoSchool(),
       },
     );
   }
