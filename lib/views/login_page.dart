@@ -123,6 +123,20 @@ class _LoginPageState extends State<LoginPage> {
       ],
     );
   }
+
+  Widget _buttonLostPassword() {
+    return TextButton(
+      onPressed: () {},
+      child: Text(
+        'Olvidé mi contraseña',
+        style: TextStyle(
+          fontSize: 15.0,
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+    );
+  }
 }
 
 Widget _textFieldName() {
@@ -153,20 +167,6 @@ Widget _textFieldPassword() {
     icon: Icons.lock_outline_rounded,
     obscureText: true,
     hintText: '',
-  );
-}
-
-Widget _buttonLostPassword() {
-  return TextButton(
-    onPressed: () {},
-    child: Text(
-      'Olvidé mi contraseña',
-      style: TextStyle(
-        fontSize: 15.0,
-        color: Colors.white,
-        fontWeight: FontWeight.w700,
-      ),
-    ),
   );
 }
 
