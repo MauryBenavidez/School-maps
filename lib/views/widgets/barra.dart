@@ -14,28 +14,28 @@ class Barra extends StatelessWidget {
       
       height: 50.0,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.white,
         
         
         borderRadius:  BorderRadius.circular(20.0),//contorno de la barra de busqueda
       ),
       child: TextField(
-        cursorColor: Colors.white,
+        cursorColor: Colors.grey,
         decoration: InputDecoration(
           prefixIcon: Icon(
             CupertinoIcons.search_circle,
             size: 35.0,
-            color: Colors.white,
+            color: Colors.grey,
             ),
             suffixIcon: Icon(
               Icons.tune,
-              color: Colors.white,
+              color: Colors.grey,
               size: 28.0,
             ),
             border: InputBorder.none,
             hintStyle: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
+              color: Colors.grey,
+              fontSize: 18.0,
             ),
             hintText: 'Busca aquí...',
         ),

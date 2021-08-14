@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'views/inicio.dart';
 
 void main() {
