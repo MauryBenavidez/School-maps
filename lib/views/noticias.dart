@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:schools_maps/views/widgets/barra.dart';
 
-class Inicio extends StatefulWidget {
-  static String id ='Inicio';
+class Noticias extends StatefulWidget {
+  static String id ='Noticias';
   @override
-  State<Inicio> createState() => _MyStatefulWidgetState();
+  State<Noticias> createState() => _MyStatefulWidgetState();
   
 }
 
 
-class _MyStatefulWidgetState extends State<Inicio> {
+class _MyStatefulWidgetState extends State<Noticias> {
   
   int _selectedIndex = 0;
- 
+  
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -22,7 +21,9 @@ class _MyStatefulWidgetState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        title: const Text('Noticias'),
+      ),
       
       body: Center(
         child: Column(
@@ -31,7 +32,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
             Padding(padding: EdgeInsets.only(
 
             ),
-            child: Barra(),
+            
             )
           ],
         ),
@@ -62,21 +63,4 @@ class _MyStatefulWidgetState extends State<Inicio> {
   }
   
 }
-
-
-  
-
-  
-
-  
-  
-  
-
-
-
-
-
-
-
-
 

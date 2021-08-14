@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'views/inicio.dart';
 
+import 'views/noticias.dart';
 void main() {
   runApp(MyApp());
 }
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: Inicio.id,
+      initialRoute: Noticias.id,
       routes: {
-        Inicio.id: (_) => Inicio(),
+        Noticias.id: (_) => Noticias(),
         
       },
     );
