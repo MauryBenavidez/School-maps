@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:schools_maps/views/widgets/widget_noticias.dart';
+
 class Noticias extends StatefulWidget {
   static String id ='Noticias';
   @override
@@ -18,22 +20,32 @@ class _MyStatefulWidgetState extends State<Noticias> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Noticias'),
+        title: const Text('Noticias'),//encabezado de la pantalla 
+        
       ),
       
       body: Center(
         child: Column(
+          
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(padding: EdgeInsets.only(
+              top: 40.0,
+              left: 30.0,
+              right: 30.0,
 
             ),
             
-            )
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Widgetnoticias(),
           ],
         ),
         
@@ -44,12 +56,12 @@ class _MyStatefulWidgetState extends State<Noticias> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'inicio',
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.cyan,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: 'Noticias',
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.cyan,
           ),
           
         ],

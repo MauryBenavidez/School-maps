@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';//paquete principal
-import 'package:schools_maps/views/widgets/barra.dart';//pauquete de widget barra
+import 'package:schools_maps/views/widgets/barra.dart';
+import 'package:schools_maps/views/widgets/widget_noticias.dart';//pauquete de widget barra
 
 class Inicio extends StatefulWidget {
   static String id ='Inicio';//id de conexion con main
@@ -32,7 +33,11 @@ class _MyStatefulWidgetState extends State<Inicio> {
 
             ),
             child: Barra(),//conexión de widget barra con inicio
-            )
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            
           ],
         ),
         

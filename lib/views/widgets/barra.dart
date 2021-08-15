@@ -20,14 +20,14 @@ class Barra extends StatelessWidget {
         borderRadius:  BorderRadius.circular(20.0),//contorno de la barra de busqueda
       ),
       child: TextField(
-        cursorColor: Colors.grey,
+        cursorColor: Colors.grey,//color de lo que escribis en la barra de busqueda
         decoration: InputDecoration(
-          prefixIcon: Icon(
+          prefixIcon: Icon(//Icono de busqueda con sus configuraciones
             CupertinoIcons.search_circle,
             size: 35.0,
             color: Colors.grey,
             ),
-            suffixIcon: Icon(
+            suffixIcon: Icon(//Icono de recientes con sus configuraciones
               Icons.tune,
               color: Colors.grey,
               size: 28.0,
