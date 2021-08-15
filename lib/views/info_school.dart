@@ -26,7 +26,7 @@ class ViewInfoSchool extends State<InfoSchool> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Impact',
               ),
@@ -39,10 +39,25 @@ class ViewInfoSchool extends State<InfoSchool> {
               textAlign: TextAlign.start,
               style: TextStyle(
                 color: Colors.grey,
-                fontSize: 15,
+                fontSize: 17,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Impact',
               ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              child: Image.asset(
+                'assets/epet20.jpg',
+                height: 274,
+              ),
+              decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 10),
+                  blurRadius: 30,
+                ),
+              ]),
             ),
           ],
         ),
