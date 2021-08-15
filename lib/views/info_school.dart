@@ -263,6 +263,29 @@ class PantallaFotos extends StatelessWidget {
   //Pantalla de fotos de la escuela.
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Center(
+            child: Container(
+              child: ListView(
+                children: <Widget>[
+                  Image(
+                    image: AssetImage('assets/1fotoepet20.jpg'),
+                  ),
+                  Image(
+                    image: AssetImage('assets/2fotoepet20.jpg'),
+                  ),
+                  Image(
+                    image: AssetImage('assets/3fotoepet20.jpg'),
+                  ),
+                  Image(
+                    image: AssetImage('assets/4fotoepet20.jpg'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
