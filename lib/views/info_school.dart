@@ -15,26 +15,36 @@ class ViewInfoSchool extends State<InfoSchool> {
         title: Text('Información de la escuela'),
         centerTitle: true,
       ),
-      backgroundColor: (Color(0xFFFFFFFF)),
-      body: _pantallaActual == 0 ? PantallaHome() : PantallaFotos(),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
+      backgroundColor: (Color(0xFFFFFFFF)), //Color del fondo de la pantalla.
+      body: _pantallaActual == 0 ? PantallaHome() : PantallaFotos(), //Con esto se intercambia de una pantalla a otra.
+      bottomNavigationBar: BottomNavigationBar( //Esta es la barra de navegación que esta abajo de la pantalla.
+        type: BottomNavigationBarType.fixed, 
+        backgroundColor: Colors.blue, //Color del fondo de la barra de navegación.
+        selectedItemColor: Colors.white, //Color del item seleccionado.
+        unselectedItemColor: Colors.black, //Color del item NO seleccionado.
+        iconSize: 27, //Tamaño de los iconos de la barra de navegación.
+        onTap: (index) { //Permite al tocar un boton cambiar de pantalla en la barra de navegación,
           setState(() {
             _pantallaActual = index;
           });
         },
-        currentIndex: _pantallaActual,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Escuela"),
+        currentIndex: _pantallaActual, //Define la pantalla principal por defecto.
+        items: [ //Items de la barra de navegación.
           BottomNavigationBarItem(
-              icon: Icon(Icons.burst_mode_sharp), label: "Fotos")
+              icon: Icon(Icons.home),
+              label: "Escuela",
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.burst_mode_sharp),
+              label: "Fotos",
+              backgroundColor: Colors.blue),
         ],
       ),
     );
   }
 }
 
-class PantallaHome extends StatelessWidget {
+class PantallaHome extends StatelessWidget { //Pantalla de la infomacion de la escuela
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -44,7 +54,7 @@ class PantallaHome extends StatelessWidget {
             height: 20.0,
           ),
           Text(
-            "Escuela Provincial de Educación Técnica N°20".toUpperCase(),
+            "Escuela Provincial de Educación Técnica N°20".toUpperCase(), //Titulo principal de la pantalla.
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
@@ -57,7 +67,7 @@ class PantallaHome extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            "Centro de educación secundaria",
+            "Centro de educación secundaria", //Subtitulo de la pantalla.
             textAlign: TextAlign.start,
             style: TextStyle(
               color: Colors.grey,
@@ -66,15 +76,15 @@ class PantallaHome extends StatelessWidget {
               fontFamily: 'Impact',
             ),
           ),
-          SizedBox(
+          SizedBox( //Espacio
             height: 10.0,
           ),
-          Container(
+          Container( //Imagen de la escuela.
             child: Image.asset(
               'assets/epet20.jpg',
               height: 274,
             ),
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [ //Sombra de la imagen.
               BoxShadow(
                 offset: Offset(0, 10),
                 blurRadius: 30,
@@ -87,7 +97,7 @@ class PantallaHome extends StatelessWidget {
   }
 }
 
-class PantallaFotos extends StatelessWidget {
+class PantallaFotos extends StatelessWidget { //Pantalla de fotos de la escuela.
   @override
   Widget build(BuildContext context) {
     return Container();
