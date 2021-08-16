@@ -33,7 +33,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
           
           children: [
             Padding(padding: EdgeInsets.only(//para dar el tamaño a la barra de busqueda
-            
+
 
             ),
             //conexión de widget barra con inicio
@@ -74,7 +74,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
         onPressed: () {//aqui va la accion de este boton flotante
 
         },
-        child: const Icon(Icons.place_outlined),//icono en el boton flotante
+        child: const Icon(Icons.place),//icono en el boton flotante
         backgroundColor: Colors.blue//color del boton flotante
       ),
     );
