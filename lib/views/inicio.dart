@@ -33,6 +33,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
           
           children: [
             Padding(padding: EdgeInsets.only(//para dar el tamaño a la barra de busqueda
+            
 
             ),
             //conexión de widget barra con inicio
