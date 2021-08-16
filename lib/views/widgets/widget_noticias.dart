@@ -15,7 +15,7 @@ class Widgetnoticias extends StatelessWidget {
           child: Padding(padding: EdgeInsets.only(//tamaño de el cuadro de texto
             top: 20.0,
             left: 50.0,
-            
+            right: 50.0,
             
           ),
           
