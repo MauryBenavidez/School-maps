@@ -111,7 +111,7 @@ class PantallaHome extends StatelessWidget {
             "INFORMACIÓN", //Subtitulo de la pantalla.
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 17,
               fontWeight: FontWeight.bold,
               fontFamily: 'Impact',
