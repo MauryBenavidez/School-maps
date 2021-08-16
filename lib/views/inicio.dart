@@ -74,7 +74,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
 
         },
         child: const Icon(Icons.place_outlined),//icono en el boton flotante
-        backgroundColor: Colors.blue,//color del boton flotante
+        backgroundColor: Colors.blue//color del boton flotante
       ),
     );
     
