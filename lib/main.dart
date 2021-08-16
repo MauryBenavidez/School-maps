@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: Noticias.id,
+      initialRoute: Inicio.id,
       routes: {
-        Noticias.id: (_) => Noticias(),
+        Inicio.id: (_) => Inicio(),
         
       },
     );
