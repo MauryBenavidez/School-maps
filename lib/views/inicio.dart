@@ -1,12 +1,6 @@
-
-
-import 'dart:js';
-
 import 'package:flutter/material.dart';//paquete principal
-
-
-import 'package:schools_maps/views/widgets/barra.dart';
-import 'package:schools_maps/views/widgets/widget_noticias.dart';
+import 'package:schools_maps/views/widgets/barra.dart';//paquete de conexion con barra de busqueda
+import 'package:schools_maps/views/widgets/widget_noticias.dart';//paquete de conexion con noticias
 
 
 class Inicio extends StatefulWidget {
@@ -19,8 +13,8 @@ class Inicio extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<Inicio> {
   
-  int _selectedIndex = 0;
-  final Screens = [
+  int _selectedIndex = 0;//que pantalla se ve primero
+  final Screens = [//esto me permite navegar entre vistas
      Barra(),
      Widgetnoticias(),
   ];
@@ -35,7 +29,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
         
         child: Column(
           
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.max,//es el espacio que queda libre en la patalla, en este caso la tenemos en maximo
           
           children: [
             Padding(padding: EdgeInsets.only(//para dar el tamaño a la barra de busqueda
@@ -72,15 +66,15 @@ class _MyStatefulWidgetState extends State<Inicio> {
           ),
           
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: _selectedIndex,//la variable crada para identificar al index 
         onTap: (index) => setState(() => _selectedIndex = index),//lo que pasa cuando le doy click
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
+      floatingActionButton: FloatingActionButton(//boton flotante en la pantalla de inicio
+        onPressed: () {//aqui va la accion de este boton flotante
 
         },
-        child: const Icon(Icons.place_outlined),
-        backgroundColor: Colors.blue,
+        child: const Icon(Icons.place_outlined),//icono en el boton flotante
+        backgroundColor: Colors.blue,//color del boton flotante
       ),
     );
     

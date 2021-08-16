@@ -6,7 +6,7 @@ class Barra extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(
+      padding: EdgeInsets.only(//es 
         left: 13.0,
         right: 10.0,
         
@@ -14,7 +14,7 @@ class Barra extends StatelessWidget {
       
       height: 50.0,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.blue,//color de la brrra de busqueda
         
         
         borderRadius:  BorderRadius.circular(20.0),//contorno de la barra de busqueda
