@@ -19,7 +19,7 @@ class Widgetnoticias extends StatelessWidget {
             
           ),
           
-          child: Padding(padding: EdgeInsets.all(10.0),
+          child: Padding(padding: EdgeInsets.all(10.0),//cuadro de texto Noticas
           child: Text('Noticias',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
           ),
