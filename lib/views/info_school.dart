@@ -15,7 +15,7 @@ class ViewInfoSchool extends State<InfoSchool> {
         title: Text('Información de la escuela'),
         centerTitle: true,
       ),
-      backgroundColor: (Color(0xFFFFFFFF)), //Color del fondo de la pantalla.
+      backgroundColor: (Color(0xFF0E8ADD)), //Color del fondo de la pantalla.
       body: _pantallaActual == 0
           ? PantallaHome()
           : PantallaFotos(), //Con esto se intercambia de una pantalla a otra.
