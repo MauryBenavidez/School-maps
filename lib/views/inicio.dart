@@ -1,5 +1,10 @@
+
+
 import 'package:flutter/material.dart';//paquete principal
+
+
 import 'package:schools_maps/views/widgets/barra.dart';
+import 'package:schools_maps/views/widgets/widget_noticias.dart';
 
 
 class Inicio extends StatefulWidget {
@@ -13,12 +18,11 @@ class Inicio extends StatefulWidget {
 class _MyStatefulWidgetState extends State<Inicio> {
   
   int _selectedIndex = 0;
+  final Screens = [
+     Barra(),
+     Widgetnoticias(),
+  ];
  
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;//para que en la barra de navegacion cuando le de click a alugun boton este cambie de pantalla
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +39,17 @@ class _MyStatefulWidgetState extends State<Inicio> {
             Padding(padding: EdgeInsets.only(//para dar el tamaño a la barra de busqueda
 
             ),
-            child: Barra(),//conexión de widget barra con inicio
+            //conexión de widget barra con inicio
             ),
             SizedBox(
               height: 25.0,//tamaño de los iconos de la barra de busqueda
             ),
-            
+            Screens[_selectedIndex],
           ],
         ),
         
       ),
+      
       
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
