@@ -288,6 +288,9 @@ class PantallaFotos extends StatelessWidget {
                   Image(
                     image: AssetImage('assets/6fotoepet20.jpg'),
                   ),
+                  Image(
+                    image: AssetImage('assets/7fotoepet20.jpg'),
+                  ),
                 ],
               ),
             ),
