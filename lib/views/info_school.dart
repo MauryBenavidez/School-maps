@@ -79,7 +79,7 @@ class PantallaHome extends StatelessWidget {
             "Centro de educación secundaria", //Subtitulo de la pantalla.
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.grey,
+              color: Colors.white,
               fontSize: 17,
               fontWeight: FontWeight.bold,
               fontFamily: 'Impact',
