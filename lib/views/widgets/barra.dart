@@ -40,6 +40,8 @@ class Barra extends StatelessWidget {
             hintText: 'Busca aquí...',
         ),
       ),
+      
     );
+    
   }
 }
