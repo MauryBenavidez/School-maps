@@ -1,5 +1,7 @@
 
 
+import 'dart:js';
+
 import 'package:flutter/material.dart';//paquete principal
 
 
@@ -29,7 +31,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
     return Scaffold(
       
       
-      body: Center(
+      body: Container(
         
         child: Column(
           

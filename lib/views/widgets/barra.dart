@@ -14,7 +14,7 @@ class Barra extends StatelessWidget {
       
       height: 50.0,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.blue,
         
         
         borderRadius:  BorderRadius.circular(20.0),//contorno de la barra de busqueda
@@ -25,16 +25,16 @@ class Barra extends StatelessWidget {
           prefixIcon: Icon(//Icono de busqueda con sus configuraciones
             CupertinoIcons.search_circle,
             size: 35.0,
-            color: Colors.grey,
+            color: Colors.white,
             ),
             suffixIcon: Icon(//Icono de recientes con sus configuraciones
               Icons.tune,
-              color: Colors.grey,
+              color: Colors.white,
               size: 28.0,
             ),
             border: InputBorder.none,
             hintStyle: TextStyle(
-              color: Colors.grey,
+              color: Colors.white,
               fontSize: 18.0,
             ),
             hintText: 'Busca aquí...',
