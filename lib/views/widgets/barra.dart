@@ -6,7 +6,7 @@ class Barra extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(//es 
+      padding: EdgeInsets.only(
         left: 13.0,
         right: 10.0,
         

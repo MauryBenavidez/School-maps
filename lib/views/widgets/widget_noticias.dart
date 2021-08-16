@@ -10,12 +10,12 @@ class Widgetnoticias extends StatelessWidget {
       
       
       children: <Widget>[
-        const Card(//cuadro
+        const Card(//cuadro de texto
           color: Colors.blue,
           child: Padding(padding: EdgeInsets.only(//tamaño de el cuadro de texto
             top: 20.0,
-            left: 100.0,
-            right: 100.0,
+            left: 50.0,
+            right: 50.0,
             
           ),
           
