@@ -37,7 +37,7 @@ class Widgetnoticias extends StatelessWidget {
           'E.P.E.T N°20',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),//estilo de texto
         ),
-        subtitle: Text('Estan en precencialidad'),
+        subtitle: Text('Estan en presencialidad'),
         isThreeLine: true,//para separar los cuadros de texto
         ),
 
@@ -49,7 +49,7 @@ class Widgetnoticias extends StatelessWidget {
           'E.P.E.T N°14',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),
         ),
-        subtitle: Text('Estan en precencialidad'),
+        subtitle: Text('Estan en presencialidad'),
         isThreeLine: true,//widget que se mustra despues del texto, aqui esta el icon de casa cuadro
         ),
           ListTile(
@@ -60,7 +60,7 @@ class Widgetnoticias extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),
           
         ),
-        subtitle: Text('Estan en precencialidad'),
+        subtitle: Text('Estan en presencialidad'),
         isThreeLine: true,
 
         ),
@@ -71,7 +71,7 @@ class Widgetnoticias extends StatelessWidget {
           'E.P.E.T N°3',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),
         ),
-        subtitle: Text('Estan en precencialidad'),
+        subtitle: Text('Estan en presencialidad'),
         isThreeLine: true,
         ),
           ListTile(
