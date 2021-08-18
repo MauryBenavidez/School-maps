@@ -14,6 +14,7 @@ class Inicio extends StatefulWidget {
 class _MyStatefulWidgetState extends State<Inicio> {
   
   int _selectedIndex = 0;//que pantalla se ve primero
+  // ignore: non_constant_identifier_names
   final Screens = [//esto me permite navegar entre vistas
      Barra(),
      Widgetnoticias(),
