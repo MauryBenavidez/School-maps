@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:schools_maps/views/info_school.dart';
-import 'views/login_page.dart';
+import 'views/inicio.dart';
 
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,10 +13,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: LoginPage.id,
+      initialRoute: Inicio.id,
       routes: {
-        LoginPage.id: (_) => LoginPage(),
+        Inicio.id: (_) => Inicio(),
+        
       },
     );
   }
 }
+
