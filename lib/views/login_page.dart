@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/views/info_school.dart';
+import 'package:schools_maps/views/inicio.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = "login_page";
@@ -280,7 +281,7 @@ void selectedItem(BuildContext context, int index) {
   switch (index) {
     case 0:
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => InfoSchool(),
+        builder: (context) => Inicio(),
       ));
       break;
   }
