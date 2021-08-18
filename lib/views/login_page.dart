@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:schools_maps/views/info_school.dart';
 import 'package:schools_maps/views/inicio.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,13 +9,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  GlobalKey<FormState> keyForm = new GlobalKey();
+  TextEditingController nameCtrl = new TextEditingController();
+  TextEditingController emailCtrl = new TextEditingController();
+  TextEditingController passwordCtrl = new TextEditingController();
   bool selectLogin = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: (Color(0xFF1F5BA0)),
-        body: Center(
+        body: new SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,6 +27,9 @@ class _LoginPageState extends State<LoginPage> {
               decoration: BoxDecoration(
                   gradient:
                       LinearGradient(colors: [Colors.indigo, Colors.blue])),
+            ),
+            SizedBox(
+              height: 70.0,
             ),
             Text(
               "¡BIENVENIDO a SchoolMaps!".toUpperCase(),
@@ -126,6 +132,71 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _buttonLogin(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.resolveWith<double>(
+          (states) => 10.0,
+        ),
+        shape: MaterialStateProperty.resolveWith(
+          (states) => RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (states) => Color(0xFF217DE7)),
+        padding: MaterialStateProperty.resolveWith<EdgeInsets>(
+          (states) => EdgeInsets.symmetric(
+            horizontal: 100,
+            vertical: 15.0,
+          ),
+        ),
+      ),
+      child: Text(
+        'Iniciar sesión'.toUpperCase(),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      onPressed: () => selectedItem(context, 0),
+    );
+  }
+
+  Widget _buttonSignUp() {
+    return TextButton(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(10),
+        backgroundColor: MaterialStateProperty.all(
+          Color(0xFF217DE7),
+        ),
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(
+            horizontal: 105,
+            vertical: 15.0,
+          ),
+        ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      ),
+      child: Text(
+        'REGISTRARME',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+          fontSize: 20.0,
+        ),
+      ),
+      onPressed: () {
+        save();
+      },
+    );
+  }
+
   Widget _buttonLostPassword() {
     return TextButton(
       onPressed: () {},
@@ -138,6 +209,46 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  String validateName(String value) {
+    String pattern = r'(^[a-zA-Z ]*$)';
+    RegExp regExp = new RegExp(pattern);
+    if (value.length == 0) {
+      return "El nombre es necesario";
+    } else if (!regExp.hasMatch(value)) {
+      return "El nombre debe de ser a-z y A-Z";
+    }
+    return "";
+  }
+
+  String validateEmail(String value) {
+    String pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regExp = new RegExp(pattern);
+    if (value.length == 0) {
+      return "El correo es necesario";
+    } else if (!regExp.hasMatch(value)) {
+      return "Correo invalido";
+    } else {
+      return "";
+    }
+  }
+
+  String validatePassword(String value) {
+    print("valorrr $value passsword ${passwordCtrl.text}");
+    if (value != passwordCtrl.text) {
+      return "Las contraseñas no coinciden";
+    }
+    return "";
+  }
+
+  save() {
+    if (keyForm.currentState.validate()) {
+      print("Nombre ${nameCtrl.text}");
+      print("Correo ${emailCtrl.text}");
+      keyForm.currentState.reset();
+    }
   }
 }
 
@@ -169,69 +280,6 @@ Widget _textFieldPassword() {
     icon: Icons.lock_outline_rounded,
     obscureText: true,
     hintText: '',
-  );
-}
-
-Widget _buttonSignUp() {
-  return TextButton(
-    style: ButtonStyle(
-      elevation: MaterialStateProperty.all(10),
-      backgroundColor: MaterialStateProperty.all(
-        Color(0xFF217DE7),
-      ),
-      padding: MaterialStateProperty.all(
-        EdgeInsets.symmetric(
-          horizontal: 105,
-          vertical: 15.0,
-        ),
-      ),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-      ),
-    ),
-    child: Text(
-      'REGISTRARME',
-      style: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.w700,
-        fontSize: 20.0,
-      ),
-    ),
-    onPressed: () {},
-  );
-}
-
-Widget _buttonLogin(BuildContext context) {
-  return ElevatedButton(
-    style: ButtonStyle(
-      elevation: MaterialStateProperty.resolveWith<double>(
-        (states) => 10.0,
-      ),
-      shape: MaterialStateProperty.resolveWith(
-        (states) => RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-      ),
-      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (states) => Color(0xFF217DE7)),
-      padding: MaterialStateProperty.resolveWith<EdgeInsets>(
-        (states) => EdgeInsets.symmetric(
-          horizontal: 100,
-          vertical: 15.0,
-        ),
-      ),
-    ),
-    child: Text(
-      'Iniciar sesión'.toUpperCase(),
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 20.0,
-        fontWeight: FontWeight.w700,
-      ),
-    ),
-    onPressed: () => selectedItem(context, 0),
   );
 }
 
