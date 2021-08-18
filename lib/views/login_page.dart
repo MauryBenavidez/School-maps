@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schools_maps/views/info_school.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = "login_page";
@@ -96,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
         SizedBox(
           height: 25.0,
         ),
-        _buttonLogin(),
+        _buttonLogin(context),
       ],
     );
   }
@@ -201,7 +202,7 @@ Widget _buttonSignUp() {
   );
 }
 
-Widget _buttonLogin() {
+Widget _buttonLogin(BuildContext context) {
   return ElevatedButton(
     style: ButtonStyle(
       elevation: MaterialStateProperty.resolveWith<double>(
@@ -229,10 +230,11 @@ Widget _buttonLogin() {
         fontWeight: FontWeight.w700,
       ),
     ),
-    onPressed: () {},
+    onPressed: () => selectedItem(context, 0),
   );
 }
 
+// ignore: camel_case_types
 class _textFieldGeneral extends StatelessWidget {
   final String labelText;
   final String hintText;
@@ -271,5 +273,15 @@ class _textFieldGeneral extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void selectedItem(BuildContext context, int index) {
+  switch (index) {
+    case 0:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => InfoSchool(),
+      ));
+      break;
   }
 }

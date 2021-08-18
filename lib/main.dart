@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: InfoSchool.id,
+      initialRoute: LoginPage.id,
       routes: {
-        InfoSchool.id: (_) => InfoSchool(),
+        LoginPage.id: (_) => LoginPage(),
       },
     );
   }
