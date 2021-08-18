@@ -17,10 +17,14 @@ class _MyStatefulWidgetState extends State<Inicio> {
     Barra(),
     Widgetnoticias(),
   ];
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: (Color(0xFF1F5BA0)),
+         body: Container(
+        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize
@@ -73,6 +77,8 @@ class _MyStatefulWidgetState extends State<Inicio> {
           child: const Icon(Icons.place_outlined), //icono en el boton flotante
           backgroundColor: Colors.blue //color del boton flotante
           ),
+      ),
+      
     );
   }
 }

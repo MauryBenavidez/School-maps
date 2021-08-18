@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/views/login_page.dart';
-import 'views/inicio.dart';
+
 
 void main() {
   runApp(MyApp());
