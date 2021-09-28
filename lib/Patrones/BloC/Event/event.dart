@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:schools_maps/UI/Pages/login_page.dart';
 
 class LoginEvent {}
@@ -72,3 +73,6 @@ class NotLoadedViewInformationSchoolEvent extends ViewInformationSchoolEvent {
   NotLoadedViewInformationSchoolEvent(this.position);
 
 }
+=======
+
+>>>>>>> ad3e89bb7af9eb85c4d1d09d7e4f1eaee1cda9e3
