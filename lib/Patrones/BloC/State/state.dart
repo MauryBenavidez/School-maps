@@ -1,7 +1,24 @@
-<<<<<<< HEAD
 import 'package:schools_maps/Patrones/BloC/State/state.dart';
-=======
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
->>>>>>> ad3e89bb7af9eb85c4d1d09d7e4f1eaee1cda9e3
+
+
+class LoginEvent extends Equatable {
+  final bool loading;
+  final List<dynamic> algoNuevo;
+
+  LoginEvent({required this.loading, required this.algoNuevo});
+
+  static LoginEvent initialState() => LoginEvent(loading: false, algoNuevo: []);
+
+ LoginEvent copiarAlgo({bool loading: true, List<dynamic> algoNuevo}) {
+    return LoginEvent(
+        loading: loading ?? this.loading,
+        algoNuevo: algoNuevo ?? this.algoNuevo);
+  }
+
+  @override
+  List<Object> get props => [this.loading, this.algoNuevo];
+}
+
