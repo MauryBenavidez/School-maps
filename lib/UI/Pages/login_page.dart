@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/UI/Pages/inicio.dart';
 
+
 class LoginPage extends StatefulWidget {
   static String id = "login_page";
 

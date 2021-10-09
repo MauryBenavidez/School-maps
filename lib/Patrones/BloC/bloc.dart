@@ -1,6 +1,8 @@
 import 'package:schools_maps/Patrones/BloC/Event/event.dart';
 import 'Event/event.dart';
-
+import 'State/state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:async';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(LoginState initialState) : super (initialState) {
