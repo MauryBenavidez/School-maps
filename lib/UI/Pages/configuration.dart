@@ -33,15 +33,13 @@ class ConfigurationPanel extends State<Configuration> {
   }
 
   Widget formUI() {
-    return Column(children: <Widget>[
+    return ListView(children: <Widget>[
       SizedBox(
         height: 150,
       ),
       GestureDetector(
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              
-            ));
+            Navigator.of(context).push(MaterialPageRoute());
           },
           child: Container(
             margin: new EdgeInsets.all(5.0),
@@ -66,9 +64,7 @@ class ConfigurationPanel extends State<Configuration> {
       ),
       GestureDetector(
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              
-            ));
+            Navigator.of(context).push(MaterialPageRoute());
           },
           child: Container(
             margin: new EdgeInsets.all(5.0),
@@ -93,9 +89,7 @@ class ConfigurationPanel extends State<Configuration> {
       ),
       GestureDetector(
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              
-            ));
+            Navigator.of(context).push(MaterialPageRoute());
           },
           child: Container(
             margin: new EdgeInsets.all(5.0),
