@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'; //paquete principal
-import 'package:schools_maps/UI/Pages/configuration.dart';
+import 'package:schools_maps/UI/Pages/widgets/configuration.dart';
 import 'package:schools_maps/UI/Pages/info_school.dart';
 import 'package:schools_maps/UI/Pages/widgets/barra.dart'; //paquete de conexion con barra de busqueda
 import 'package:schools_maps/UI/Pages/widgets/widget_noticias.dart'; //paquete de conexion con noticias
