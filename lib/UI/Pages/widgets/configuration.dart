@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:schools_maps/UI/Pages/views_configuration/set_email.dart';
+import 'package:schools_maps/UI/Pages/views_configuration/set_password.dart';
 
 class Configuration extends StatelessWidget {
   @override
@@ -37,7 +38,9 @@ class Configuration extends StatelessWidget {
       ),
       GestureDetector(
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute());
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => SetPassword(),
+            ));
           },
           child: Container(
             margin: new EdgeInsets.all(30.0),
