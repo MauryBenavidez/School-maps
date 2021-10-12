@@ -40,7 +40,7 @@ class View_SetPassword extends State<SetPassword> {
   Widget formUI() {
     return Column(children: <Widget>[
       SizedBox(
-        height: 20.0,
+        height: 110.0,
       ),
       formItemsDesign(
           Icons.lock_outline_rounded,
