@@ -10,7 +10,9 @@ class NotLoadedLoginEvent extends LoginEvent {
   NotLoadedLoginEvent(this.position);
 }
 
-class RegistEvent {}
+class RegistEvent {
+  
+}
 
 class LoadedRegistEvent extends RegistEvent {}
 
