@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schools_maps/views/login_page.dart';
+import 'package:schools_maps/UI/Pages/login_page.dart';
 
 
 void main() {

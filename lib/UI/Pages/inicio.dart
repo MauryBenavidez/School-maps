@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart'; //paquete principal
-import 'package:schools_maps/views/info_school.dart';
-import 'package:schools_maps/views/widgets/barra.dart'; //paquete de conexion con barra de busqueda
-import 'package:schools_maps/views/widgets/widget_noticias.dart'; //paquete de conexion con noticias
+import 'package:schools_maps/UI/Pages/info_school.dart';
+import 'package:schools_maps/UI/Pages/widgets/barra.dart'; //paquete de conexion con barra de busqueda
+import 'package:schools_maps/UI/Pages/widgets/widget_noticias.dart'; //paquete de conexion con noticias
 
 class Inicio extends StatefulWidget {
   static String id = 'Inicio'; //id de conexion con main
