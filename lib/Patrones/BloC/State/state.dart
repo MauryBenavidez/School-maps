@@ -22,6 +22,25 @@ class LoginState extends Equatable {
   List<Object> get props => [this.loading, this.algoNuevo];
 }
 
+class RegistState extends Equatable {
+  final bool loading;
+  final List<dynamic> algoNuevo;
+
+  RegistState({ this.loading,  this.algoNuevo});
+
+  static RegistState initialState() => RegistState(loading: false, algoNuevo: []);
+
+ LoginState copiarAlgo({bool loading: true, List<dynamic> algoNuevo}) {
+    return LoginState(
+        loading: loading ?? this.loading,
+        algoNuevo: algoNuevo ?? this.algoNuevo);
+  }
+
+  @override
+  List<Object> get props => [this.loading, this.algoNuevo];
+}
+
+
 
 
 
