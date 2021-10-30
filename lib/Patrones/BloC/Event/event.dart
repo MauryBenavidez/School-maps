@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:schools_maps/UI/Pages/login_page.dart';
+import 'package:schools_maps/UX/login_page.dart';
 
 class LoginEvent {}
 

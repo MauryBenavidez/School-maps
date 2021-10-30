@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schools_maps/UI/Pages/inicio.dart';
+import 'package:schools_maps/UX/inicio.dart';
 
 
 class LoginPage extends StatefulWidget {
