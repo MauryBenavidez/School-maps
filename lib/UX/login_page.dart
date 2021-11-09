@@ -254,7 +254,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 Widget _textFieldName() {
-  var keyboardType2 = null;
+  var keyboardType2;
   return _textFieldGeneral(
     labelText: "Nombre",
     hintText: "Mauricio Benavidez",
@@ -276,7 +276,7 @@ Widget _textFieldEmail() {
 }
 
 Widget _textFieldPassword() {
-  var keyboardType2 = null;
+  var keyboardType2;
   return _textFieldGeneral(
     labelText: 'Contraseña',
     onChanged: (value) {},
@@ -285,6 +285,7 @@ Widget _textFieldPassword() {
     hintText: '', errorText: '', keyboardType: keyboardType2,
   );
 }
+
 
 // ignore: camel_case_types
 class _textFieldGeneral extends StatelessWidget {
@@ -296,12 +297,12 @@ class _textFieldGeneral extends StatelessWidget {
   final bool obscureText;
   final String errorText;
   const _textFieldGeneral(
-      {required this.labelText,
+      { required this.labelText,
       required this.hintText,
       required this.onChanged,
-      required this.icon,
-      required this.obscureText,
-      required this.keyboardType,
+       required this.icon,
+       required this.obscureText,
+       required this.keyboardType,
       required this.errorText});
 
   @override
@@ -327,6 +328,7 @@ class _textFieldGeneral extends StatelessWidget {
     );
   }
 }
+
 
 void selectedItem(BuildContext context, int index) {
   switch (index) {
