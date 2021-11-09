@@ -3,7 +3,7 @@ import 'package:schools_maps/UX/inicio.dart';
 
 
 class LoginPage extends StatefulWidget {
-  static String id = "login_page";
+  static String id = "login";
 
   @override
   _LoginPageState createState() => _LoginPageState();
