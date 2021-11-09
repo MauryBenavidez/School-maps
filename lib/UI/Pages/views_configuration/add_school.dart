@@ -12,7 +12,7 @@ class Add extends StatefulWidget {
 class AddSchool extends State<Add> {
   TextEditingController nombreCtrl = new TextEditingController();
   TextEditingController textoCtrl = new TextEditingController();
-  late File image;
+  File image;
   Future pickImage(ImageSource source) async {
     try {
       final image = await ImagePicker().pickImage(source: source);
