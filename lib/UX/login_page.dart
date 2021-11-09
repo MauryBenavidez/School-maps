@@ -254,13 +254,14 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 Widget _textFieldName() {
-  var keyboardType2;
+  
+  var keyboardType2 = null;
   return _textFieldGeneral(
     labelText: "Nombre",
     hintText: "Mauricio Benavidez",
     icon: Icons.person_outline,
     onChanged: (value) {},
-    obscureText: false, errorText: '', keyboardType: keyboardType2,
+    obscureText: false, keyboardType: keyboardType2, errorText: '', 
   );
 }
 
@@ -271,12 +272,13 @@ Widget _textFieldEmail() {
     keyboardType: TextInputType.emailAddress,
     onChanged: (value) {},
     icon: Icons.email_outlined,
-    obscureText: false, errorText: '',
+    obscureText: false, errorText: '', 
   );
 }
 
 Widget _textFieldPassword() {
-  var keyboardType2;
+  
+  var keyboardType2 = null;
   return _textFieldGeneral(
     labelText: 'Contraseña',
     onChanged: (value) {},
@@ -302,7 +304,7 @@ class _textFieldGeneral extends StatelessWidget {
       required this.onChanged,
        required this.icon,
        required this.obscureText,
-       required this.keyboardType,
+        required this.keyboardType,
       required this.errorText});
 
   @override
