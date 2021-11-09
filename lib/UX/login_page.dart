@@ -260,7 +260,7 @@ Widget _textFieldName() {
     hintText: "Mauricio Benavidez",
     icon: Icons.person_outline,
     onChanged: (value) {},
-    obscureText: false, keyboardType: keyboardType2, errorText: '',
+    obscureText: false, errorText: '', keyboardType: keyboardType2,
   );
 }
 
@@ -282,7 +282,7 @@ Widget _textFieldPassword() {
     onChanged: (value) {},
     icon: Icons.lock_outline_rounded,
     obscureText: true,
-    hintText: '', keyboardType: keyboardType2, errorText: '',
+    hintText: '', errorText: '', keyboardType: keyboardType2,
   );
 }
 
