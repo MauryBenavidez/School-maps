@@ -245,25 +245,22 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   save() {
-    if (keyForm.currentState.validate()) {
+    if (keyForm.currentState!.validate()) {
       print("Nombre ${nameCtrl.text}");
       print("Correo ${emailCtrl.text}");
-      keyForm.currentState.reset();
+      keyForm.currentState!.reset();
     }
   }
 }
 
 Widget _textFieldName() {
+  var keyboardType2 = null;
   return _textFieldGeneral(
     labelText: "Nombre",
     hintText: "Mauricio Benavidez",
     icon: Icons.person_outline,
     onChanged: (value) {},
-<<<<<<< HEAD
     obscureText: false, errorText: '', keyboardType: keyboardType2,
-=======
-    obscureText: false,
->>>>>>> f7e0fc927496aa1e0e75071220d1732c88004643
   );
 }
 
@@ -274,21 +271,18 @@ Widget _textFieldEmail() {
     keyboardType: TextInputType.emailAddress,
     onChanged: (value) {},
     icon: Icons.email_outlined,
-    obscureText: false,
+    obscureText: false, errorText: '',
   );
 }
 
 Widget _textFieldPassword() {
+  var keyboardType2 = null;
   return _textFieldGeneral(
     labelText: 'Contraseña',
     onChanged: (value) {},
     icon: Icons.lock_outline_rounded,
     obscureText: true,
-<<<<<<< HEAD
     hintText: '', errorText: '', keyboardType: keyboardType2,
-=======
-    hintText: '',
->>>>>>> f7e0fc927496aa1e0e75071220d1732c88004643
   );
 }
 
@@ -302,13 +296,13 @@ class _textFieldGeneral extends StatelessWidget {
   final bool obscureText;
   final String errorText;
   const _textFieldGeneral(
-      {this.labelText,
-      this.hintText,
-      this.onChanged,
-      this.icon,
-      this.obscureText,
-      this.keyboardType,
-      this.errorText});
+      {required this.labelText,
+      required this.hintText,
+      required this.onChanged,
+      required this.icon,
+      required this.obscureText,
+      required this.keyboardType,
+      required this.errorText});
 
   @override
   Widget build(BuildContext context) {
