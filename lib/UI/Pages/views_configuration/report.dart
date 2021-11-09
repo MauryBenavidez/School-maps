@@ -12,7 +12,7 @@ class Report extends StatefulWidget {
 class ReportProblem extends State<Report> {
   TextEditingController tituloCtrl = new TextEditingController();
   TextEditingController textoCtrl = new TextEditingController();
-  late File image;
+  File image;
   Future pickImage(ImageSource source) async {
     try {
       final image = await ImagePicker().pickImage(source: source);
