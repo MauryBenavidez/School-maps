@@ -261,7 +261,7 @@ Widget _textFieldName() {
     hintText: "Mauricio Benavidez",
     icon: Icons.person_outline,
     onChanged: (value) {},
-    obscureText: false, keyboardType: keyboardType2, errorText: '', 
+    obscureText: false,  errorText: '', 
   );
 }
 
@@ -269,7 +269,7 @@ Widget _textFieldEmail() {
   return _textFieldGeneral(
     labelText: "Correo",
     hintText: "ejemplo@gmail.com",
-    keyboardType: TextInputType.emailAddress,
+   
     onChanged: (value) {},
     icon: Icons.email_outlined,
     obscureText: false, errorText: '', 
@@ -284,7 +284,7 @@ Widget _textFieldPassword() {
     onChanged: (value) {},
     icon: Icons.lock_outline_rounded,
     obscureText: true,
-    hintText: '', errorText: '', keyboardType: keyboardType2,
+    hintText: '', errorText: '',
   );
 }
 
@@ -294,7 +294,7 @@ class _textFieldGeneral extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Function onChanged;
-  final TextInputType keyboardType;
+ 
   final IconData icon;
   final bool obscureText;
   final String errorText;
@@ -304,7 +304,7 @@ class _textFieldGeneral extends StatelessWidget {
       required this.onChanged,
        required this.icon,
        required this.obscureText,
-        required this.keyboardType,
+        
       required this.errorText});
 
   @override
@@ -318,7 +318,7 @@ class _textFieldGeneral extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
-        keyboardType: keyboardType,
+       
         obscureText: obscureText,
         decoration: InputDecoration(
           errorText: errorText,
