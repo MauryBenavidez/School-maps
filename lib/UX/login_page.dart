@@ -255,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
 
 Widget _textFieldName() {
   
-  var keyboardType2 = null;
+  
   return _textFieldGeneral(
     labelText: "Nombre",
     hintText: "Mauricio Benavidez",
@@ -278,7 +278,6 @@ Widget _textFieldEmail() {
 
 Widget _textFieldPassword() {
   
-  var keyboardType2 = null;
   return _textFieldGeneral(
     labelText: 'Contraseña',
     onChanged: (value) {},
@@ -294,7 +293,6 @@ class _textFieldGeneral extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Function onChanged;
- 
   final IconData icon;
   final bool obscureText;
   final String errorText;
@@ -304,7 +302,6 @@ class _textFieldGeneral extends StatelessWidget {
       required this.onChanged,
        required this.icon,
        required this.obscureText,
-        
       required this.errorText});
 
   @override
