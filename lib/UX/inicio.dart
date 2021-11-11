@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart'; //paquete principal
 import 'package:schools_maps/UI/Pages/widgets/configuration.dart';
-import 'package:schools_maps/UI/Pages/info_school.dart';
 import 'package:schools_maps/UI/Pages/widgets/barra.dart'; //paquete de conexion con barra de busqueda
 import 'package:schools_maps/UI/Pages/widgets/widget_noticias.dart'; //paquete de conexion con noticias
 
@@ -24,9 +23,11 @@ class _MyStatefulWidgetState extends State<Inicio> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        
         backgroundColor: (Color(0xFF1F5BA0)),
         body: Container(
           child: Column(
+            
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize
                 .max, //es el espacio que queda libre en la patalla, en este caso la tenemos en maximo
@@ -38,7 +39,8 @@ class _MyStatefulWidgetState extends State<Inicio> {
                 //conexión de widget barra con inicio
               ),
               SizedBox(
-                height: 25.0, //tamaño de los iconos de la barra de busqueda
+                height: 25.0,
+                 //tamaño de los iconos de la barra de busqueda
               ),
               Screens[_selectedIndex],
             ],
@@ -72,18 +74,7 @@ class _MyStatefulWidgetState extends State<Inicio> {
           onTap: (index) => setState(
               () => _selectedIndex = index), //lo que pasa cuando le doy click
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: FloatingActionButton(
-            //boton flotante en la pantalla de inicio
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => InfoSchool(),
-              ));
-            },
-            child:
-                const Icon(Icons.place_outlined), //icono en el boton flotante
-            backgroundColor: Colors.blue //color del boton flotante
-            ),
+        
       ),
     );
   }

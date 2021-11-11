@@ -13,12 +13,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        
       ),
-      initialRoute: LoginPage.id,
-      routes: {
-        LoginPage.id: (_) => LoginPage(),
-      },
+    home: LoginPage(),
+      
     );
   }
 }
