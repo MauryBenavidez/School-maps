@@ -6,6 +6,7 @@ import 'package:schools_maps/UX/login_page.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:schools_maps/model/user_model.dart';
 
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({ Key? key }) : super(key: key);
 
