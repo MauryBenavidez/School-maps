@@ -1,7 +1,10 @@
-import 'dart:html';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:schools_maps/UX/inicio.dart';
 import 'package:schools_maps/UX/login_page.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:schools_maps/model/user_model.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({ Key? key }) : super(key: key);
@@ -11,6 +14,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+
+  final _auth = FirebaseAuth.instance;
+
+
   final _formKey = GlobalKey<FormState>();
 
   final nombreEditingController = new TextEditingController();
@@ -29,7 +36,19 @@ class _RegisterPageState extends State<RegisterPage> {
       controller: nombreEditingController,
       keyboardType: TextInputType.emailAddress,
 
-      //validator: () {},
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{3,}$');
+        if (value!.isEmpty) {
+
+          return("Este campo no puede estar vacio");        
+        }
+        if (!regex.hasMatch(value)) {
+
+          return ("La contraseña tiene que tener (Min. 3 caracteres");
+          
+        }
+        return null;
+      },
       onSaved: (value)
       {
         nombreEditingController.text = value!;
@@ -52,7 +71,18 @@ class _RegisterPageState extends State<RegisterPage> {
       controller: apellidoEditingController,
       keyboardType: TextInputType.emailAddress,
 
-      //validator: () {},
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{3,}$');
+        if (value!.isEmpty) {
+
+          return("Este campo no puede estar vacio");        
+        }
+       {
+
+          return null;
+          
+        }
+      },
       onSaved: (value)
       {
         apellidoEditingController.text = value!;
@@ -74,7 +104,20 @@ class _RegisterPageState extends State<RegisterPage> {
       controller: nombreEditingController,
       keyboardType: TextInputType.emailAddress,
 
-      //validator: () {},
+      validator: (value) {
+
+       if (value!.isEmpty) {
+         return ("Introdusca la direccion de correo electronico");
+         
+       }
+       
+       if (!RegExp("r'^(([^<>()[\]\\.,;:\s\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}));").hasMatch(value)) {
+         return ("Introdusca una direccion de correo valida");
+         
+       }
+       return null;
+
+     },
       onSaved: (value)
       {
         emailEditingController.text = value!;
@@ -97,7 +140,21 @@ class _RegisterPageState extends State<RegisterPage> {
       controller: passwordEditingController,
       keyboardType: TextInputType.emailAddress,
 
-      //validator: () {},
+       validator: (value) {
+        RegExp regex = new RegExp(r'^.{6,}$');
+        if (value!.isEmpty) 
+        {
+        return ("Introduca una contraseña");  
+
+
+
+        }
+
+        if(!regex.hasMatch(value))
+        {
+          return("La contraseña tiene que tener (Min. 6 caracteres");
+        }
+      },
       onSaved: (value)
       {
         passwordEditingController.text = value!;
@@ -120,9 +177,21 @@ class _RegisterPageState extends State<RegisterPage> {
     final confirmpasswordField = TextFormField(
       autofocus: false,
       controller: confirmpasswordEditingController,
-      keyboardType: TextInputType.emailAddress,
+      obscureText: true,
 
-      //validator: () {},
+      validator: (value){
+
+      if (confirmpasswordEditingController.text !=
+          passwordEditingController.text
+      
+      ) {
+
+        return "verifique que las contraseñas sean iguales";
+        
+      }
+      return null;
+
+      },
       onSaved: (value)
       {
         confirmpasswordEditingController.text = value!;
@@ -148,7 +217,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
 
         onPressed: () {
-          
+          singUp(emailEditingController.text, passwordEditingController.text);
         },
         child: Text("Registrarme", textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20, color:Colors.white, fontWeight:  FontWeight.bold),
@@ -235,4 +304,62 @@ class _RegisterPageState extends State<RegisterPage> {
       
     );
   }
-}
+
+  void singIn(String email, String password) async{
+
+    if(_formKey.currentState!.validate())
+
+  {
+    await _auth.createUserWithEmailAndPassword(email: email, password: password)
+  
+    .then((value)=>{
+
+      postDetailsToFirestore()
+
+    }).catchError((e){
+
+       Fluttertoast.showToast(msg: e!.message);
+
+    });
+    
+  }
+
+  }
+
+  postDetailsToFirestore() async
+  {
+
+    //llamada a firestore
+    //llamada a user model
+    
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    User? user = _auth.currentUser;
+
+    UserModel userModel = UserModel();
+
+    //escribindo todos los valores
+
+
+    userModel.email = user!.email;
+    userModel.uid = user.uid;
+    userModel.firstName = nombreEditingController.text;
+    userModel.secondName = apellidoEditingController.text;
+
+
+    await firebaseFirestore
+      .collection("users")
+      .doc(user.uid)
+      .set(userModel.toMap());
+      Fluttertoast.showToast(msg: "Cuenta creada exitosamente");
+
+      Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context) => Inicio()),(route) => false);
+
+
+
+
+  }
+
+  void singUp(String text, String text2) {}
+
+  
+ }

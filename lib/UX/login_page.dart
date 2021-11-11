@@ -1,9 +1,11 @@
-import 'dart:js';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:schools_maps/UX/inicio.dart';
 import 'package:schools_maps/UX/register_page.dart';
+
 
 
 class LoginPage extends StatefulWidget {
@@ -22,6 +24,8 @@ class _LoginPageState extends State<LoginPage> {
    final TextEditingController emailController =new TextEditingController();
    final TextEditingController passwordController =new TextEditingController();
 
+   final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
 
@@ -30,7 +34,20 @@ class _LoginPageState extends State<LoginPage> {
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
 
-      //validator: () {},
+     validator: (value) {
+
+       if (value!.isEmpty) {
+         return ("Introdusca la direccion de correo electronico");
+         
+       }
+       
+       if (!RegExp("r'^(([^<>()[\]\\.,;:\s\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}));").hasMatch(value)) {
+         return ("Introdusca una direccion de correo valida");
+         
+       }
+       return null;
+
+     },
       onSaved: (value)
       {
         emailController.text = value!;
@@ -53,7 +70,21 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       controller: passwordController,
       obscureText: true,
-      //validator: () {},
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{6,}$');
+        if (value!.isEmpty) 
+        {
+        return ("Introduca una contraseña");  
+
+
+
+        }
+
+        if(!regex.hasMatch(value))
+        {
+          return("La contraseña tiene que tener (Min. 6 caracteres");
+        }
+      },
       onSaved: (value)
       {
         passwordController.text = value!;
@@ -83,11 +114,12 @@ class _LoginPageState extends State<LoginPage> {
 
 
         onPressed: () {
-          Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Inicio()));
+          singIn(emailController.text, passwordController.text);
         },
-        child: Text("Iniciar Sesion", textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 20, color:Colors.white, fontWeight:  FontWeight.bold),
+        child: Text(
+          "Iniciar Sesion", 
+          textAlign: TextAlign.center,
+         style: TextStyle(fontSize: 20, color:Colors.white, fontWeight:  FontWeight.bold),
        
         ),
 
@@ -153,5 +185,28 @@ class _LoginPageState extends State<LoginPage> {
         ),
       
     );
+  }
+
+  void singIn(String email, String password) async{
+
+    if(_formKey.currentState!.validate())
+
+  {
+    await _auth
+    .signInWithEmailAndPassword(email: email, password: password)
+    .then((uid) => {
+      Fluttertoast.showToast(msg: "Inicio de sesion exitoso"),
+     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Inicio())),
+
+    }).catchError((e)
+    {
+
+      Fluttertoast.showToast(msg: e!.message);
+
+
+    });
+    
+  }
+
   }
 }
