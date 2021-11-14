@@ -36,7 +36,7 @@ class Widgetnoticias extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white), //estilo de texto
           ),
-          subtitle: Text('Estan en presencialidad',style: TextStyle(
+          subtitle: Text('No tiene bancos',style: TextStyle(
               color: Colors.white,
               fontSize: 15,
               
@@ -52,7 +52,7 @@ class Widgetnoticias extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white,
             ),
           ),
-          subtitle: Text('Estan en presencialidad',style: TextStyle(
+          subtitle: Text('Estan en inscripciones',style: TextStyle(
               color: Colors.white,
               fontSize: 15,
               
@@ -67,7 +67,7 @@ class Widgetnoticias extends StatelessWidget {
             'E.P.E.T N°8',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white),
           ),
-          subtitle: Text('Estan en presencialidad',style: TextStyle(
+          subtitle: Text('Estan en inscripciones',style: TextStyle(
               color: Colors.white,
               fontSize: 15,
               
@@ -75,30 +75,17 @@ class Widgetnoticias extends StatelessWidget {
             ),),
           isThreeLine: true,
         ),
-        ListTile(
-          trailing: Icon(Icons.school,color: Colors.white,),
-          title: Text(
-            'E.P.E.T N°3',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white),
-          ),
-          subtitle: Text('Estan en presencialidad',style: TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              
-              
-            ),),
-          isThreeLine: true,
-        ),
+      
         ListTile(
           trailing: Icon(
-            Icons.computer,
+            Icons.school,
             color: Colors.white,
             ),
           title: Text(
             'E.P.E.T N°7',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white),
           ),
-          subtitle: Text('Estan en virtualidad',style: TextStyle(
+          subtitle: Text('Estan en inscripciones',style: TextStyle(
               color: Colors.white,
               fontSize: 15,
               
