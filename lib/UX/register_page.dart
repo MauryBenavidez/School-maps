@@ -102,18 +102,18 @@ class _RegisterPageState extends State<RegisterPage> {
     );
     final emailField = TextFormField(
       autofocus: false,
-      controller: nombreEditingController,
-      keyboardType: TextInputType.emailAddress,
+      controller: emailEditingController,
+      keyboardType: TextInputType.name,
 
       validator: (value) {
 
        if (value!.isEmpty) {
-         return ("Introdusca la direccion de correo electronico");
+         return ("Introduzca la dirección de correo electrónico");
          
        }
        
-       if (!RegExp("r'^(([^<>()[\]\\.,;:\s\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}));").hasMatch(value)) {
-         return ("Introdusca una direccion de correo valida");
+       if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+         return ("Introduzca una dirección de correo valida");
          
        }
        return null;
@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.mail_outline),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Correo electronico",
+        hintText: "Correo electrónico",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10)
         ),
@@ -139,21 +139,18 @@ class _RegisterPageState extends State<RegisterPage> {
     final passwordField = TextFormField(
       autofocus: false,
       controller: passwordEditingController,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.name,
+      obscureText: true,
 
        validator: (value) {
         RegExp regex = new RegExp(r'^.{6,}$');
         if (value!.isEmpty) 
         {
-        return ("Introduca una contraseña");  
-
-
-
+        return ("Introduzca una contraseña");  
         }
-
         if(!regex.hasMatch(value))
         {
-          return("La contraseña tiene que tener (Min. 6 caracteres");
+          return("La contraseña debe tener(Min.6 caracteres)");
         }
       },
       onSaved: (value)
@@ -184,11 +181,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
       if (confirmpasswordEditingController.text !=
           passwordEditingController.text
-      
       ) {
-
         return "verifique que las contraseñas sean iguales";
-        
       }
       return null;
 
@@ -230,7 +224,7 @@ class _RegisterPageState extends State<RegisterPage> {
      return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Schoo Maps"),
+        title: Text("School Maps"),
         centerTitle: true,
         backgroundColor: Colors.blue,
         elevation: 0,
@@ -257,25 +251,25 @@ class _RegisterPageState extends State<RegisterPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                    SizedBox(
-                      height: 200,
+                      height: 100,
                       child:  Image.asset(
                      'assets/logo.png',
                      fit: BoxFit.contain,
                      ),),
 
-                   SizedBox(height:45),
+                   SizedBox(height:20),
                     NombreField,
-                    SizedBox(height:40),
-                    ApellidoField, 
-                    SizedBox(height:40),
-                     emailField, 
-                    SizedBox(height:40),
-                     passwordField, 
-                    SizedBox(height:40),
-                     confirmpasswordField, 
-                    SizedBox(height:40),
-                    singUpButton,
                     SizedBox(height:20),
+                    ApellidoField, 
+                    SizedBox(height:20),
+                     emailField, 
+                    SizedBox(height:20),
+                     passwordField, 
+                    SizedBox(height:20),
+                     confirmpasswordField, 
+                    SizedBox(height:20),
+                    singUpButton,
+                    SizedBox(height:15),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -283,7 +277,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         GestureDetector(onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                         },
-                        child: Text("Iniciar sesion",style: TextStyle(
+                        child: Text("Iniciar sesión",style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                            fontSize: 15,
@@ -306,7 +300,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void singIn(String email, String password) async{
+  void singUp(String email, String password) async{
 
     if(_formKey.currentState!.validate())
 
@@ -360,7 +354,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   }
 
-  void singUp(String text, String text2) {}
+  void singIn(String text, String text2) {}
 
   
  }

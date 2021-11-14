@@ -62,18 +62,25 @@ body: Center(
                     SizedBox(height:20),
                     Text("Estas seguro de cerrar sesión?"),
                    SizedBox(height:15),
-                  ActionChip(label: Text("Cerrar sision"), onPressed: () {
+                  ActionChip(label: Text("Cerrar sesión"), onPressed: () {
                     logout(context);
                     
                   }),
                   
                   SizedBox(height: 20),
-                        Text("${loggedInUser.firstName}${loggedInUser.secondName}",style: TextStyle(
+                        Text("Nombre:""${loggedInUser.firstName}",style: TextStyle(
                           color: Colors.black12,
                           fontWeight: FontWeight.w400,
                         ),),
                         SizedBox(height: 20),
-                        Text("${loggedInUser.email}",style: TextStyle(
+
+                         Text("Apellido:""${loggedInUser.secondName}",style: TextStyle(
+                          color: Colors.black12,
+                          fontWeight: FontWeight.w400,
+                        ),),
+
+                        SizedBox(height: 20),
+                        Text("Correo:""${loggedInUser.email}",style: TextStyle(
                           color: Colors.black12,
                           fontWeight: FontWeight.w400,
                         ),),

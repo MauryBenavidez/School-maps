@@ -34,18 +34,14 @@ class _LoginPageState extends State<LoginPage> {
       keyboardType: TextInputType.emailAddress,
 
      validator: (value) {
-
        if (value!.isEmpty) {
-         return ("Introdusca la direccion de correo electronico");
-         
+         return ("Introduzca la dirección de correo electrónico");
        }
-       
-       if (!RegExp("r'^(([^<>()[\]\\.,;:\s\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}));").hasMatch(value)) {
-         return ("Introdusca una direccion de correo valida");
-         
+       //reg expresio para el validator del email
+       if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+         return ("Introduzca una dirección de correo válida");
        }
        return null;
-
      },
       onSaved: (value)
       {
@@ -56,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.mail_outline),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Correo electronico",
+        hintText: "Correo electrónico",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10)
         ),
@@ -73,15 +69,11 @@ class _LoginPageState extends State<LoginPage> {
         RegExp regex = new RegExp(r'^.{6,}$');
         if (value!.isEmpty) 
         {
-        return ("Introduca una contraseña");  
-
-
-
+        return ("Introduzca una contraseña");  
         }
-
         if(!regex.hasMatch(value))
         {
-          return("La contraseña tiene que tener (Min. 6 caracteres");
+          return("La contraseña debe tener(Min.6 caracteres)");
         }
       },
       onSaved: (value)
@@ -116,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
           singIn(emailController.text, passwordController.text);
         },
         child: Text(
-          "Iniciar Sesion", 
+          "Iniciar Sesión", 
           textAlign: TextAlign.center,
          style: TextStyle(fontSize: 20, color:Colors.white, fontWeight:  FontWeight.bold),
        
@@ -127,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Eschool Maps",),
+        title: Text("School Maps",),
         centerTitle: true,
         
       ),
@@ -144,17 +136,17 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                    SizedBox(
-                      height: 200,
+                      height: 100,
                       child:  Image.asset(
                      'assets/logo.png',
                      fit: BoxFit.contain,
                      ),),
 
-                   SizedBox(height:60),
+                   SizedBox(height:40),
                     emailField,
-                    SizedBox(height:60),
+                    SizedBox(height:40),
                     passwordField, 
-                    SizedBox(height:60),
+                    SizedBox(height:40),
                     loginButton,
                    SizedBox(height:15),
                     
@@ -186,25 +178,24 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+
+  //Login function
+
   void singIn(String email, String password) async{
 
     if(_formKey.currentState!.validate())
 
   {
     await _auth
-    .signInWithEmailAndPassword(email: email, password: password)
-    .then((uid) => {
-      Fluttertoast.showToast(msg: "Inicio de sesion exitoso"),
+     .signInWithEmailAndPassword(email: email, password: password)
+     .then((uid) => {
+      Fluttertoast.showToast(msg: "Inicio de sesión exitoso"),
      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Inicio())),
 
     }).catchError((e)
     {
-
       Fluttertoast.showToast(msg: e!.message);
-
-
-    });
-    
+    });  
   }
 
   }
