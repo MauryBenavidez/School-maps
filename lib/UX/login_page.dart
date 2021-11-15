@@ -96,11 +96,11 @@ class _LoginPageState extends State<LoginPage> {
     );
     
     final loginButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(30),
+      elevation: 10,
+      borderRadius: BorderRadius.circular(40),
       color: Colors.blue,
       child: MaterialButton(
-        padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         minWidth: MediaQuery.of(context).size.width,
 
 
@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Container(
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(60),
+              padding: const EdgeInsets.all(45),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -137,18 +137,19 @@ class _LoginPageState extends State<LoginPage> {
                   children: <Widget>[
                    SizedBox(
                       height: 100,
+                      
                       child:  Image.asset(
                      'assets/Logo2.png',
                      fit: BoxFit.contain,
                      ),),
 
-                   SizedBox(height:40),
+                   SizedBox(height:30),
                     emailField,
-                    SizedBox(height:40),
+                    SizedBox(height:30),
                     passwordField, 
-                    SizedBox(height:40),
+                    SizedBox(height:30),
                     loginButton,
-                   SizedBox(height:15),
+                   SizedBox(height:10),
                     
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
