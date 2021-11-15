@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                    SizedBox(
                       height: 100,
                       child:  Image.asset(
-                     'assets/logo.png',
+                     'assets/Logo2.png',
                      fit: BoxFit.contain,
                      ),),
 
