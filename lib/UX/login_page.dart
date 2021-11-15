@@ -186,7 +186,8 @@ class _LoginPageState extends State<LoginPage> {
     if(_formKey.currentState!.validate())
 
   {
-    await _auth
+    // ignore: unused_local_variable
+    var set = await _auth
      .signInWithEmailAndPassword(email: email, password: password)
      .then((uid) => {
       Fluttertoast.showToast(msg: "Inicio de sesión exitoso"),
