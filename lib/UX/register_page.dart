@@ -45,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
         }
         if (!regex.hasMatch(value)) {
 
-          return ("La contraseña tiene que tener (Min. 3 caracteres");
+          return ("El nombre tiene que tener (Min.3 caracteres");
           
         }
         return null;
@@ -143,14 +143,14 @@ class _RegisterPageState extends State<RegisterPage> {
       obscureText: true,
 
        validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = new RegExp(r'^.{7,}$');
         if (value!.isEmpty) 
         {
         return ("Introduzca una contraseña");  
         }
         if(!regex.hasMatch(value))
         {
-          return("La contraseña debe tener(Min.6 caracteres)");
+          return("La contraseña debe tener(Min.7 caracteres)");
         }
       },
       onSaved: (value)

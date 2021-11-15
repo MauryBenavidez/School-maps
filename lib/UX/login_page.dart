@@ -66,14 +66,14 @@ class _LoginPageState extends State<LoginPage> {
       controller: passwordController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = new RegExp(r'^.{7,}$');
         if (value!.isEmpty) 
         {
         return ("Introduzca una contraseña");  
         }
         if(!regex.hasMatch(value))
         {
-          return("La contraseña debe tener(Min.6 caracteres)");
+          return("La contraseña debe tener(Min.7 caracteres)");
         }
       },
       onSaved: (value)
