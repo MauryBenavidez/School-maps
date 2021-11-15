@@ -23,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
    final TextEditingController emailController =new TextEditingController();
    final TextEditingController passwordController =new TextEditingController();
 
+
    final _auth = FirebaseAuth.instance;
 
   @override
@@ -32,12 +33,11 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
-
      validator: (value) {
        if (value!.isEmpty) {
          return ("Introduzca la dirección de correo electrónico");
        }
-       //reg expresio para el validator del email
+       //reg expresion para el validator del email
        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
          return ("Introduzca una dirección de correo válida");
        }
@@ -188,8 +188,7 @@ class _LoginPageState extends State<LoginPage> {
   {
     // ignore: unused_local_variable
     var set = await _auth
-     .signInWithEmailAndPassword(email: email, password: password)
-     .then((uid) => {
+     .signInWithEmailAndPassword(email: email, password: password).then((uid) => {
       Fluttertoast.showToast(msg: "Inicio de sesión exitoso"),
      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Inicio())),
 
