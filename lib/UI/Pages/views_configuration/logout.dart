@@ -84,10 +84,7 @@ body: Center(
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
                         ),),
-
-
                   ],
-                  
                 ),
               
             ),

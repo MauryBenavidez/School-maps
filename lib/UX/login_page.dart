@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
      validator: (value) {
-       if (value!.isEmpty) {
+       if (value!.isEmpty) {//verifica que esta vacio el campo
          return ("Introduzca la dirección de correo electrónico");
        }
        //reg expresion para el validator del email
@@ -190,9 +190,9 @@ class _LoginPageState extends State<LoginPage> {
       Fluttertoast.showToast(msg: "Inicio de sesión "),
      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Inicio())),
 
-    }).catchError((e)
+    }).catchError((e)//error de captura, no encontro los datos
     {
-      Fluttertoast.showToast(msg: e!.message);
+      Fluttertoast.showToast(msg: e!.message);//flutter toast es una notificacion
     });  
   }
 

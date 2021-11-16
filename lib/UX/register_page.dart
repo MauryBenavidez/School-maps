@@ -179,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       validator: (value){
 
-      if (confirmpasswordEditingController.text !=
+      if (confirmpasswordEditingController.text !=//diferentes
           passwordEditingController.text
       ) {
         return "verifique que las contraseñas sean iguales";
@@ -304,7 +304,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     if(_formKey.currentState!.validate())
 
-  {
+  {//verifica mediante autenticacion que ya hay un cuenta con ese correo
      await _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value)=>{
       postDetailsToFirestore()
@@ -328,7 +328,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     UserModel userModel = UserModel();
 
-    //escribindo todos los valores
+    //escribiendo todos los valores
 
 
     userModel.email = user!.email;
@@ -337,14 +337,12 @@ class _RegisterPageState extends State<RegisterPage> {
     userModel.secondName = apellidoEditingController.text;
 
 
-    await firebaseFirestore
+    await firebaseFirestore//espera que se carguen los datos en firebase
       .collection("users")
       .doc(user.uid)
       .set(userModel.toMap());
       Fluttertoast.showToast(msg: "Cuenta creada ");
       Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context) => Inicio()),(route) => false);
   }
-
   void singIn(String text, String text2) {}
-
  }

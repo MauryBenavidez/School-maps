@@ -66,10 +66,6 @@ class Configuration extends StatelessWidget {
             padding: EdgeInsets.only(top: 16, bottom: 16),
           )
           ),
-
-
-
-
              GestureDetector(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
