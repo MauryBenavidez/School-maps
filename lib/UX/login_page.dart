@@ -21,10 +21,10 @@ class _LoginPageState extends State<LoginPage> {
 
 
    final TextEditingController emailController =new TextEditingController();
-   final TextEditingController passwordController =new TextEditingController();
+   final TextEditingController passwordController =new TextEditingController();//campos de texto que podemos rellenar
 
 
-   final _auth = FirebaseAuth.instance;
+   final _auth = FirebaseAuth.instance;//conexion firebase
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
        if (value!.isEmpty) {//verifica que esta vacio el campo
          return ("Introduzca la dirección de correo electrónico");
        }
-       //reg expresion para el validator del email
+       //reg expresion para laidar si el correo tiene estos caracteres
        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
          return ("Introduzca una dirección de correo válida");
        }
