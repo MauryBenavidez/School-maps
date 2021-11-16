@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Add extends StatefulWidget {
@@ -8,24 +7,29 @@ class Add extends StatefulWidget {
 }
 
 class AddSchool extends State<Add> {
-  TextEditingController nombre = TextEditingController();
+  //El texteditingcontroller es un controlador para un texto editable.
+  TextEditingController nombre = TextEditingController(); //Son los campos de texto que podemos rellenar.
   TextEditingController direccion = TextEditingController();
   TextEditingController telefono = TextEditingController();
   TextEditingController web = TextEditingController();
   TextEditingController horario = TextEditingController();
   TextEditingController imagen = TextEditingController();
-  final firebase = FirebaseFirestore.instance;
-  agregar() async {
+
+  final firebase = FirebaseFirestore.instance; //Con esta linea hacemos la conexion con Firebase.
+
+  agregar() async { //Este es el boton para agregar una escuela.
     try {
-      await firebase.collection("escuelas").doc(nombre.text).set({
-        "nombre": nombre.text,
+      await firebase.collection("escuelas").doc(nombre.text).set({ //El await nos permite esperar la respuesta.
+                                                                  //Definimos la collection como "escuelas"
+                                                                  //Y el documento con el nombre.
+        "nombre": nombre.text, //Definimos todas las variables que va a recibir como texto.
         "direccion": direccion.text,
         "telefono": telefono.text,
         "web": web.text,
         "horario": horario.text,
         "imagen": imagen.text,
       });
-    } catch (e) {
+    } catch (e) { //Guarda todos los datos en la variable e.
       print(e);
     }
   }
@@ -56,21 +60,21 @@ class AddSchool extends State<Add> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Agregar escuela"),
+          title: Text("Agregar escuela"), //Definimos el app bar con el texto de agregar escuela.
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: ListView(
+          child: ListView( //Desde aqui es el codigo de los campos de texto.
             children: [
               TextField(
-                controller: nombre,
+                controller: nombre, //Definimos la variable donde se guardara el texto ingresado en el campo.
                 decoration: InputDecoration(
                     labelText: "Nombre de la escuela",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     )),
               ),
-              SizedBox(
+              SizedBox( //Espacio
                 height: 15,
               ),
               TextField(
@@ -128,12 +132,12 @@ class AddSchool extends State<Add> {
               SizedBox(
                 height: 15,
               ),
-              Row(
+              Row( //Acá entramos a el Row donde estaran los tres botones, agregar, actualizar y editar.
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    style: TextButton.styleFrom(backgroundColor: Colors.green),
-                    onPressed: () {
+                    style: TextButton.styleFrom(backgroundColor: Colors.green), //Le ponemos el color.
+                    onPressed: () { //Aquí cuando presiona el boton envia los datos y limpia los campos.
                       agregar();
                       nombre.clear();
                       direccion.clear();
@@ -142,7 +146,7 @@ class AddSchool extends State<Add> {
                       horario.clear();
                       imagen.clear();
                     },
-                    child: Text('Agregar'),
+                    child: Text('Agregar'), //Texto del boton,
                   ),
                   ElevatedButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.amber),
@@ -178,10 +182,11 @@ class AddSchool extends State<Add> {
                 child: SingleChildScrollView(
                   physics: ScrollPhysics(),
                   child: StreamBuilder<QuerySnapshot>(
-                      stream: firebase.collection('escuelas').snapshots(),
+                      stream: firebase.collection('escuelas').snapshots(), //Definimos el canal donde iran los datos con stream y guardamos
+                                                                          //la instancia con snapshot.
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
-                          return ListView.builder(
+                          return ListView.builder( //Si snapshot tiene los datos devuelve los datos.
                               shrinkWrap: true,
                               physics: ScrollPhysics(),
                               itemCount: snapshot.data!.docs.length,
@@ -194,7 +199,7 @@ class AddSchool extends State<Add> {
                                 );
                               });
                         } else {
-                          return Center(child: CircularProgressIndicator());
+                          return Center(child: CircularProgressIndicator()); //Indicador de que está cargando
                         }
                       }),
                 ),
