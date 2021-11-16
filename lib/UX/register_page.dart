@@ -207,7 +207,7 @@ class _RegisterPageState extends State<RegisterPage> {
       borderRadius: BorderRadius.circular(30),
       color: Colors.blue,
       child: MaterialButton(
-        padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         minWidth: MediaQuery.of(context).size.width,
 
 
@@ -243,7 +243,7 @@ class _RegisterPageState extends State<RegisterPage> {
             color: Colors.white,
             child: Padding(
               
-              padding: const EdgeInsets.all(60),
+              padding: const EdgeInsets.all(40),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -251,12 +251,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                    SizedBox(
-                      height: 100,
+                      height: 150,
                       child:  Image.asset(
                      'assets/Logo2.png',
                      fit: BoxFit.contain,
                      ),),
-
+                     Text("School Maps",style: TextStyle(fontSize: 40, color:Colors.blue, fontWeight:  FontWeight.bold),),
                    SizedBox(height:20),
                     NombreField,
                     SizedBox(height:20),
@@ -269,7 +269,7 @@ class _RegisterPageState extends State<RegisterPage> {
                      confirmpasswordField, 
                     SizedBox(height:20),
                     singUpButton,
-                    SizedBox(height:15),
+                    SizedBox(height:10),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -305,10 +305,8 @@ class _RegisterPageState extends State<RegisterPage> {
     if(_formKey.currentState!.validate())
 
   {
-    await _auth.createUserWithEmailAndPassword(email: email, password: password)
-  
+     await _auth.createUserWithEmailAndPassword(email: email, password: password)
     .then((value)=>{
-
       postDetailsToFirestore()
 
     }).catchError((e){
@@ -316,12 +314,10 @@ class _RegisterPageState extends State<RegisterPage> {
        Fluttertoast.showToast(msg: e!.message);
 
     });
-    
   }
-
   }
-
   postDetailsToFirestore() async
+
   {
 
     //llamada a firestore
@@ -345,16 +341,10 @@ class _RegisterPageState extends State<RegisterPage> {
       .collection("users")
       .doc(user.uid)
       .set(userModel.toMap());
-      Fluttertoast.showToast(msg: "Cuenta creada exitosamente");
-
+      Fluttertoast.showToast(msg: "Cuenta creada ");
       Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context) => Inicio()),(route) => false);
-
-
-
-
   }
 
   void singIn(String text, String text2) {}
 
-  
  }

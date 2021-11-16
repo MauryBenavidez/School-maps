@@ -8,7 +8,7 @@ class Configuration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-        height: 5,
+        height:50,
       ),
       GestureDetector(
           onTap: () {
@@ -35,14 +35,11 @@ class Configuration extends StatelessWidget {
             padding: EdgeInsets.only(top: 16, bottom: 16),
           )),
       SizedBox(
-        height: 5,
+        height: 1,
       ),
      
-      
-      
-     
       SizedBox(
-        height: 5,
+        height: 1,
       ),
       GestureDetector(
           onTap: () {
@@ -90,7 +87,7 @@ class Configuration extends StatelessWidget {
                 Color(0xFF0484EC),
               ], begin: Alignment.topLeft, end: Alignment.bottomRight),
             ),
-            child: Text("Cerrar sesion",
+            child: Text("Cerrar sesión",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,

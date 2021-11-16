@@ -136,18 +136,20 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                    SizedBox(
-                      height: 100,
+                      height: 150,
                       
                       child:  Image.asset(
                      'assets/Logo2.png',
                      fit: BoxFit.contain,
                      ),),
 
-                   SizedBox(height:30),
+                     Text("School Maps",style: TextStyle(fontSize: 40, color:Colors.blue, fontWeight:  FontWeight.bold),),
+
+                   SizedBox(height:20),
                     emailField,
-                    SizedBox(height:30),
+                    SizedBox(height:20),
                     passwordField, 
-                    SizedBox(height:30),
+                    SizedBox(height:20),
                     loginButton,
                    SizedBox(height:10),
                     
@@ -178,19 +180,14 @@ class _LoginPageState extends State<LoginPage> {
       
     );
   }
-
-
   //Login function
 
   void singIn(String email, String password) async{
-
     if(_formKey.currentState!.validate())
-
   {
-    // ignore: unused_local_variable
-    var set = await _auth
+    await _auth//metodo de autenticacion
      .signInWithEmailAndPassword(email: email, password: password).then((uid) => {
-      Fluttertoast.showToast(msg: "Inicio de sesión exitoso"),
+      Fluttertoast.showToast(msg: "Inicio de sesión "),
      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Inicio())),
 
     }).catchError((e)

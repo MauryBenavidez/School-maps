@@ -63,25 +63,25 @@ body: Center(
                     Text("Estas seguro de cerrar sesión?"),
                    SizedBox(height:15),
                   ActionChip(label: Text("Cerrar sesión"), onPressed: () {
-                    logout(context);
+                    logout(context);//funcion de logout
                     
                   }),
                   
                   SizedBox(height: 20),
                         Text("Nombre:""${loggedInUser.firstName}",style: TextStyle(
-                          color: Colors.black12,
+                          color: Colors.black,
                           fontWeight: FontWeight.w400,
                         ),),
                         SizedBox(height: 20),
 
                          Text("Apellido:""${loggedInUser.secondName}",style: TextStyle(
-                          color: Colors.black12,
+                          color: Colors.black,
                           fontWeight: FontWeight.w400,
                         ),),
 
                         SizedBox(height: 20),
                         Text("Correo:""${loggedInUser.email}",style: TextStyle(
-                          color: Colors.black12,
+                          color: Colors.black,
                           fontWeight: FontWeight.w400,
                         ),),
 
@@ -96,9 +96,11 @@ body: Center(
 ),
     );
   }
-  Future <void> logout (BuildContext context) async
+
+  //funcion logout
+  void logout (BuildContext context) async
   {
     await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> LoginPage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> LoginPage()));//volver al login
   }
 }
